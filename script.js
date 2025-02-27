@@ -157,7 +157,6 @@ document.addEventListener("DOMContentLoaded",function(){
  
   function getMenu(foodList){
     let cardSection = document.getElementsByClassName("card-section")[0];
-    console.log("cardsection",cardSection);
     cardSection.innerHTML="";
     foodList.forEach((item,_index)=>{
 
@@ -183,54 +182,54 @@ document.addEventListener("DOMContentLoaded",function(){
   }
 
 
-  function TakeOrder(foodList){
-
-    let _takorder = new Promise((resolve)=>{
-
-        //
-        let arr=[];
-        for(let count=0;count<3;count++){
-         let x = Math.random() * (foodList.length - 0) + 0;
-          x=Math.floor(x);
-          arr.push(foodList[x]);
-        }
-        let orderStatus ={
-          order_status:true,
-          paid:false
-        }
-        setTimeout(()=>{
-          console.log(arr);
-          resolve(orderStatus);
-        },2500)
-    }).then((orderStatus)=>{
-
-      return new Promise((resolve)=>{
-        
-        setTimeout(()=>{
-          console.log("Order Preparation Status :",orderStatus);
-          resolve();
-        },1500)
-      })
-
-    }).then((orderStatus)=>{
-
-      return new Promise((_resolve)=>{
-        orderStatus ={
-          order_status:true,
-          paid:true
-        }
-        setTimeout(()=>{
-          console.log("Payment Status :",orderStatus);
-            alert("thankyou for eating with us today!");
-
-        },1000)
-      })
-
+  
+  function TakeOrder(foodList) {
+    return new Promise((resolve, reject) => {
+      let arr = [];
+      for (let count = 0; count < 3; count++) {
+        let x = Math.floor(Math.random() * foodList.length);
+        arr.push(foodList[x]);
+      }
+      
+      setTimeout(() => {
+        console.log("Order Items:", arr);
+        resolve({ order_status: true, paid: false });
+      }, 2500);
+    })
+    .then(orderStatus => orderPrep(orderStatus))
+    .then(orderStatus => payOrder(orderStatus))
+    .then(orderStatus => {
+      if (orderStatus.paid) {
+        thankyouFnc();
+      }
+    })
+    .catch(error => {
+      console.log("Error in order process:", error);
     });
-
   }
-
-
+  
+  function orderPrep(orderStatus) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Order Preparation Status:", orderStatus);
+        resolve({ ...orderStatus, order_status: true });
+      }, 1500);
+    });
+  }
+  
+  function payOrder(orderStatus) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Payment Status:", { ...orderStatus, paid: true });
+        resolve({ ...orderStatus, paid: true });
+      }, 1000);
+    });
+  }
+  
+  function thankyouFnc() {
+    alert("Thank you for eating with us today!");
+  }
+  
 
 
   getMenu(allFoodList);
