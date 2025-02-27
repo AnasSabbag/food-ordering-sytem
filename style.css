@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+ /* background: black;  */
+}
+
+p,li{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color :white;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.main {
+  display: flex;
+  background: blanchedalmond;
+}
+
+/* Sidebar */
+.side-bar {
+  width: 22%;
+  height: 100vh;
+  background: yellow;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  
+}
+
+.slogan-img img{
+  width: 70%;
+  height: 60%;
+  /* background: red; */
+}
+
+.quick-links {
+  height: 30%;
+  background: greenyellow;
+}
+
+.more-about-us {
+  height: 30%;
+  background: palevioletred;
+}
+
+/* Main Content */
+.main-content {
+  width: 78%;
+  margin-left: 22%;
+  background: blueviolet;
+}
+
+/* Navbar */
+.nav-bar {
+  height: 80px;
+  background: blue;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  /* z-index: 1000; */
+}
+
+.search-bar {
+  flex-grow: 1;
+}
+
+.search-bar input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#btn-signup, #btn-login {
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.nav-logo img{
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+/* Menu */
+.menu-img img{
+  height: 50vh;
+  width: 100%;
+  padding: 20px 20px 0 20px;
+}
+
+.menu {
+  width: 100%;
+  background: gray;
+  padding: 20px;
+}
+
+.card-section {
+  background: yellow;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.card {
+  width: 225px;
+  height: 200px;
+  background: pink;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
