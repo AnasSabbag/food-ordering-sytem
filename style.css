@@ -3,14 +3,28 @@
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
- /* background: black;  */
+  background:#111315; 
 }
 
-p,li{
+p{
   font-weight: 600;
   font-size: 18px;
   line-height: 26px;
   color :white;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+li{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color :white;
+  margin-left: 40px;
+  
+}
+#slogan-text{
+  color: red;
 }
 
 body {
@@ -20,14 +34,14 @@ body {
 
 .main {
   display: flex;
-  background: blanchedalmond;
+  
 }
 
 /* Sidebar */
 .side-bar {
   width: 22%;
   height: 100vh;
-  background: yellow;
+  
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -36,40 +50,43 @@ body {
   overflow-y: auto;
   
 }
-
+.slogan-img{
+  border-bottom: 1px solid white;
+}
 .slogan-img img{
   width: 70%;
   height: 60%;
-  /* background: red; */
+  margin-left: 30px;
 }
 
 .quick-links {
   height: 30%;
-  background: greenyellow;
+  
+  border-bottom: 1px solid white;
 }
 
 .more-about-us {
   height: 30%;
-  background: palevioletred;
+  border-bottom: 1px solid white;
 }
 
 /* Main Content */
 .main-content {
   width: 78%;
   margin-left: 22%;
-  background: blueviolet;
+  background-color: rgba(0, 0, 0, 0.527);
 }
 
 /* Navbar */
 .nav-bar {
   height: 80px;
-  background: blue;
+  background: #191D20;
   display: flex;
   align-items: center;
   padding: 0 20px;
   position: sticky;
   top: 0;
-  /* z-index: 1000; */
+  
 }
 
 .search-bar {
@@ -81,6 +98,8 @@ body {
   height: 40px;
   border-radius: 5px;
   padding: 5px;
+  color: white;
+  background: #272A30;
 }
 
 #btn-signup, #btn-login {
@@ -88,6 +107,8 @@ body {
   width: 100px;
   border-radius: 10px;
   margin-left: 10px;
+  color: white;
+  background: red;
 }
 
 .nav-logo img{
@@ -106,12 +127,12 @@ body {
 
 .menu {
   width: 100%;
-  background: gray;
+  background: #191D20;
   padding: 20px;
 }
 
 .card-section {
-  background: yellow;
+  
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -122,8 +143,42 @@ body {
 .card {
   width: 225px;
   height: 200px;
-  background: pink;
+  
   border-radius: 10px;
   padding: 10px;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card-img{
+  width: 205px;
+  height: 115px;
+  background: yellow;
+  border: 2px solid white;
+}
+.card-img img{
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  align-items: center;
+  border-radius: 7px;
+  
+}
+
+.card-content{
+  width: 205px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+.card-content img{
+  width: 40px;
+  height: 40px;
+ 
 }
